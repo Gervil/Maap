@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Maap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssx-1p-Ca0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="61b-vE-gtZ">
+                                <rect key="frame" x="20" y="552" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Mapa"/>
+                                    <segment title="Satélite"/>
+                                    <segment title="Híbrido"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fx8-nV-sb0"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ckG-pE-YTc">
+                                <rect key="frame" x="165" y="502" width="270" height="42"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="niX-Et-gC7">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📍Distancia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoV-yj-xOg">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="19"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.03 Km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-ab-fmU">
+                                                <rect key="frame" x="0.0" y="19" width="88" height="23"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-Gz-17B">
+                                        <rect key="frame" x="91" y="0.0" width="88" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚴Velocidad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-1d-00q">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="19"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-tY-7KI">
+                                                <rect key="frame" x="0.0" y="19" width="88" height="23"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LTO-Uy-mBb">
+                                        <rect key="frame" x="182" y="0.0" width="88" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏱Duración" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-9p-Geq">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="19"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:08" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL5-tc-DHa">
+                                                <rect key="frame" x="0.0" y="19" width="88" height="23"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-zD-dVz">
+                                <rect key="frame" x="20" y="28" width="94" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BJk-MO-QBX"/>
+                                    <constraint firstAttribute="width" constant="94" id="cEV-fF-P7G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="🔄Reiniciar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWW-nF-9ld"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="1000" maxValue="100000" minimumValueImage="ZoomOut.png" maximumValueImage="ZoomIn.png" translatesAutoresizingMaskIntoConstraints="NO" id="J86-Bf-ydw">
+                                <rect key="frame" x="18" y="464" width="564" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X5G-jJ-nEa"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="zoom:" destination="BYZ-38-t0r" eventType="valueChanged" id="TYZ-QR-Ddp"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ssx-1p-Ca0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="5VG-0P-0pz"/>
+                            <constraint firstItem="Ssx-1p-Ca0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5jb-Xj-maV"/>
+                            <constraint firstItem="61b-vE-gtZ" firstAttribute="top" secondItem="ckG-pE-YTc" secondAttribute="bottom" constant="8" symbolic="YES" id="9VI-1J-KyD"/>
+                            <constraint firstAttribute="bottom" secondItem="61b-vE-gtZ" secondAttribute="bottom" constant="20" symbolic="YES" id="Hpf-B6-VyX"/>
+                            <constraint firstItem="hNi-zD-dVz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Jr6-yf-abf"/>
+                            <constraint firstItem="J86-Bf-ydw" firstAttribute="trailing" secondItem="61b-vE-gtZ" secondAttribute="trailing" id="MX7-OJ-A8d"/>
+                            <constraint firstItem="ckG-pE-YTc" firstAttribute="top" secondItem="J86-Bf-ydw" secondAttribute="bottom" constant="8" symbolic="YES" id="OzC-48-svd"/>
+                            <constraint firstItem="hNi-zD-dVz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PfP-qp-p8Q"/>
+                            <constraint firstItem="ckG-pE-YTc" firstAttribute="centerX" secondItem="61b-vE-gtZ" secondAttribute="centerX" id="RhG-10-zjm"/>
+                            <constraint firstItem="hNi-zD-dVz" firstAttribute="leading" secondItem="J86-Bf-ydw" secondAttribute="leading" id="TVl-lM-J3u"/>
+                            <constraint firstAttribute="trailing" secondItem="Ssx-1p-Ca0" secondAttribute="trailing" id="WLO-6S-yps"/>
+                            <constraint firstItem="Ssx-1p-Ca0" firstAttribute="centerX" secondItem="61b-vE-gtZ" secondAttribute="centerX" id="l8o-4Q-WZA"/>
+                            <constraint firstItem="Ssx-1p-Ca0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qdt-Oq-CFn"/>
+                            <constraint firstItem="J86-Bf-ydw" firstAttribute="leading" secondItem="61b-vE-gtZ" secondAttribute="leading" id="qzh-bK-TKZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="distanciaRecorrida" destination="QcI-ab-fmU" id="nwt-Rc-GYE"/>
+                        <outlet property="duracion" destination="YL5-tc-DHa" id="Ib4-6B-dlF"/>
+                        <outlet property="mapa" destination="Ssx-1p-Ca0" id="gJe-2R-MXC"/>
+                        <outlet property="velocidad" destination="edf-tY-7KI" id="3cL-OK-8wJ"/>
+                        <outlet property="zoomSlider" destination="J86-Bf-ydw" id="c5k-Ol-4yA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431" y="307"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ZoomIn.png" width="32" height="32"/>
+        <image name="ZoomOut.png" width="32" height="32"/>
+    </resources>
+</document>
