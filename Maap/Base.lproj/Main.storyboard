@@ -138,6 +138,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnReiniciar" destination="hNi-zD-dVz" id="d8B-lK-fb9"/>
                         <outlet property="distanciaRecorrida" destination="QcI-ab-fmU" id="nwt-Rc-GYE"/>
                         <outlet property="duracion" destination="YL5-tc-DHa" id="Ib4-6B-dlF"/>
                         <outlet property="mapa" destination="Ssx-1p-Ca0" id="gJe-2R-MXC"/>

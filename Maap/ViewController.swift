@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapa: MKMapView!
+    @IBOutlet weak var btnReiniciar: UIButton!
     @IBOutlet weak var distanciaRecorrida: UILabel!
     @IBOutlet weak var velocidad: UILabel!
     @IBOutlet weak var duracion: UILabel!
@@ -111,9 +112,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if status == .AuthorizedWhenInUse {
             manejador.startUpdatingLocation()
             mapa.showsUserLocation = true
+            btnReiniciar.enabled = true
         } else {
             manejador.stopUpdatingLocation()
             mapa.showsUserLocation = false
+            btnReiniciar.enabled = false
         }
     }
     
@@ -143,6 +146,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    //Alerta por errores en la lectura
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        let alerta = UIAlertController(title: "ERROR", message: "No es posible obtener la ubicación del dispositivo \(error.code)", preferredStyle: .Alert)
+        let accionOK = UIAlertAction(title: "OK", style: .Default, handler: {
+            accion in //..
+        })
+        alerta.addAction(accionOK)
+        self.presentViewController(alerta, animated: true, completion: nil)
+    }
+    
     @IBAction func zoom(sender: UISlider) {
         alturaCamara = CLLocationDistance(sender.value)
         cameraSetup()
@@ -161,12 +174,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     private func cameraSetup() {
-        let coordenadas = localizacionActual
-        let altura = alturaCamara
-        let angulo: CGFloat = 45
-        let posicionDelMapaSegunElNorte = manejador.location!.course
-        
-        let camera = MKMapCamera(lookingAtCenterCoordinate: coordenadas, fromDistance: altura, pitch: angulo, heading: posicionDelMapaSegunElNorte)
-        mapa.setCamera(camera, animated: true)
+        if manejador.location != nil {
+            let coordenadas = localizacionActual
+            let altura = alturaCamara
+            let angulo: CGFloat = 45
+            let posicionDelMapaSegunElNorte = manejador.location!.course
+            
+            let camera = MKMapCamera(lookingAtCenterCoordinate: coordenadas, fromDistance: altura, pitch: angulo, heading: posicionDelMapaSegunElNorte)
+            mapa.setCamera(camera, animated: true)
+        }
     }
 }
