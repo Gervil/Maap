@@ -98,7 +98,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     private func colocarPin(loc2: CLLocation) {
         let pin = MKPointAnnotation()
         pin.title = "\(localizacionActual.latitude), \(localizacionActual.longitude)"
-        pin.subtitle = String(format: "%.2f", distancia) + " Mts."
+        pin.subtitle = String(format: "%.2f", distanciaTotal) + " Mts."
         
         newLocation = loc2
         pin.coordinate = localizacionActual
