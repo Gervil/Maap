@@ -84,7 +84,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapa.setRegion(mapRegionView, animated: true)
         
         mapa.showsCompass = true
-        resetAll()
     }
 
     private func localizacion()-> (latitud: CLLocationDegrees, longitud: CLLocationDegrees) {
